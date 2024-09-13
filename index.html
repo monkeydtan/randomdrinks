@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>สุ่มเมนูเครื่องดื่ม</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -42,6 +43,28 @@
             color: #006400;
             margin-top: 20px;
         }
+
+        /* Style สำหรับการสร้างพลุ */
+        .firework {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: transparent;
+            animation: explode 1s ease-out forwards;
+        }
+        @keyframes explode {
+            0% {
+                transform: scale(0.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -53,7 +76,7 @@
 
     <script>
         function randomDrink() {
-            const drinks = ['กาแฟ', 'ชาเขียว', 'นมสด', 'ชานมไข่มุก', 'น้ำผลไม้', 'สมูทตี้', 'โซดา', 'โกโก้','ชาไต้หวัน','แดงโซดา','ชาเขียว','ชาไทย','โอเลี้ยง','อเมริกาโน่ส้ม','ลาเต้'];
+            const drinks = ['กาแฟ', 'ชาเขียว', 'นมสด', 'ชานมไข่มุก', 'น้ำผลไม้', 'สมูทตี้', 'โซดา', 'โกโก้','ชาไต้หวัน','แดงโซดา','ชาเขียว','ชาไทย','โอเลี้ยง','อเมริกาโน่ส้ม','ลาเต้','โค้กปั่น','นมชมพู','โอวัลติน'];
             const loadingElement = document.getElementById('loading');
             const resultElement = document.getElementById('drink-result');
             
@@ -66,7 +89,27 @@
                 const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
                 loadingElement.style.display = 'none';  // ซ่อนข้อความ "กำลังสุ่ม"
                 resultElement.innerText = `วันนี้คุณจะดื่ม: ${randomDrink}`;
-            }, 3500); // ดีเลย์ 2000 มิลลิวินาที หรือ 2 วินาที
+                launchFireworks();
+            }, 3000); // ดีเลย์ 2000 มิลลิวินาที หรือ 2 วินาที
+        }
+
+        function launchFireworks() {
+            const colors = ['#FF6347', '#FFD700', '#7FFF00', '#00FFFF', '#FF69B4', '#4B0082'];
+            
+            for (let i = 0; i < 5; i++) {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                firework.style.left = Math.random() * window.innerWidth + 'px';
+                firework.style.top = Math.random() * window.innerHeight + 'px';
+
+                document.body.appendChild(firework);
+
+                // ลบพลุหลังจากที่แอนิเมชันเสร็จสิ้น
+                setTimeout(() => {
+                    firework.remove();
+                }, 1000);
+            }
         }
     </script>
 
