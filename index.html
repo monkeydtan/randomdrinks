@@ -53,7 +53,7 @@
 
     <script>
         function randomDrink() {
-            const drinks = ['กาแฟ', 'ชาเขียว', 'นมสด', 'ชานมไข่มุก', 'น้ำผลไม้', 'สมูทตี้', 'โซดา', 'โกโก้'];
+            const drinks = ['กาแฟ', 'ชาเขียว', 'นมสด', 'ชานมไข่มุก', 'น้ำผลไม้', 'สมูทตี้', 'โซดา', 'โกโก้','ชาไต้หวัน','แดงโซดา','ชาเขียว','ชาไทย','โอเลี้ยง','อเมริกาโน่ส้ม','ลาเต้'];
             const loadingElement = document.getElementById('loading');
             const resultElement = document.getElementById('drink-result');
             
@@ -66,7 +66,7 @@
                 const randomDrink = drinks[Math.floor(Math.random() * drinks.length)];
                 loadingElement.style.display = 'none';  // ซ่อนข้อความ "กำลังสุ่ม"
                 resultElement.innerText = `วันนี้คุณจะดื่ม: ${randomDrink}`;
-            }, 2000); // ดีเลย์ 2000 มิลลิวินาที หรือ 2 วินาที
+            }, 5000); // ดีเลย์ 2000 มิลลิวินาที หรือ 2 วินาที
         }
     </script>
 
