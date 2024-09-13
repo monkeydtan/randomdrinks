@@ -67,7 +67,8 @@
         /* การจัดวาง PNG ให้เหมือนการตัดแปะ */
         .sticker {
             position: absolute;
-            width: 150px; /* ปรับขนาดได้ตามต้องการ */
+           /* width: 150px; /* ปรับขนาดได้ตามต้องการ */
+            width: 20vw; /* เปลี่ยนจาก px เป็น vw เพื่อให้ปรับตามขนาดหน้าจอ */
             transition: transform 0.3s ease;
         }
         .sticker:hover {
@@ -75,7 +76,7 @@
         }
         .sticker1 {
             top: 145px;
-            left: 120px;
+            left: 150px;
         }
         .sticker2 {
             bottom: 200px;
@@ -97,7 +98,7 @@
     <p id="drink-result"></p>
 
     <!-- การแปะรูป PNG ในหน้าเว็บ -->
-    <img src="pic/drink1.png" alt="ตกแต่ง" class="sticker sticker1" height="150px">
+    <!-- <img src="pic/drink1.png" alt="ตกแต่ง" class="sticker sticker1"> -->
     <!-- <img src="pic/drink2.png" alt="ตกแต่ง" class="sticker sticker2">
     <img src="pic/drink3.png" alt="ตกแต่ง" class="sticker sticker3"> -->
 
